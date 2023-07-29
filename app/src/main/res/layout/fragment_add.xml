@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".presentation.AddFragment">
+
+    <EditText
+        android:id="@+id/editName"
+        android:layout_width="300dp"
+        android:layout_height="89dp"
+        android:layout_marginTop="112dp"
+        android:ems="10"
+        android:hint="Ingrese Nombre"
+        android:inputType="number"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editPrice"
+        android:layout_width="300dp"
+        android:layout_height="90dp"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:hint="Ingrese precio"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="@+id/editName"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/editName"
+        app:layout_constraintTop_toBottomOf="@+id/editName" />
+
+    <EditText
+        android:id="@+id/editQty"
+        android:layout_width="300dp"
+        android:layout_height="90dp"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:hint="Ingrese Cantidad"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="@+id/editPrice"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/editPrice"
+        app:layout_constraintTop_toBottomOf="@+id/editPrice" />
+
+    <TextView
+        android:id="@+id/textViewResult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="TOTAL ACTUAL"
+        android:textAlignment="center"
+        android:textColor="#1A237E"
+        android:textSize="50sp"
+        app:layout_constraintEnd_toEndOf="@+id/editQty"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="@+id/editQty"
+        app:layout_constraintTop_toBottomOf="@+id/editQty" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/textViewResult"
+        app:layout_constraintStart_toStartOf="@+id/textViewResult"
+        app:layout_constraintTop_toBottomOf="@+id/textViewResult"
+        app:layout_constraintVertical_bias="0.169" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
