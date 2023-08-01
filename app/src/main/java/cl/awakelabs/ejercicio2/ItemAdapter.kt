@@ -12,9 +12,7 @@ import cl.awakelabs.ejercicio2.databinding.ItemBinding
 class ItemAdapter : RecyclerView.Adapter<ItemAdapter.ItemViewHolder>() {
     lateinit var binding: ItemBinding
     private val listItem = mutableListOf<Item>()
-    class ItemViewHolder(v: ItemBinding) : RecyclerView.ViewHolder(v.root) {
 
-    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {
         binding = ItemBinding.inflate(LayoutInflater.from(parent.context),parent, false)
@@ -26,6 +24,20 @@ class ItemAdapter : RecyclerView.Adapter<ItemAdapter.ItemViewHolder>() {
     }
 
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
-        TODO("Not yet implemented")
+        val item = listItem[position]
+        holder.render(item)
+
     }
+
+    class ItemViewHolder(val v: ItemBinding) : RecyclerView.ViewHolder(v.root) {
+
+        fun render(item: Item){
+            v.txName.text = item.name.toString()
+            v.txPrice.text = item.price.toString()
+            v.txQty.text = item.qty.toString()
+            v.txTotal.text = (item.price * item.qty).toString()
+        }
+
+    }
+
 }
