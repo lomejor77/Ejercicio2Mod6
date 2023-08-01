@@ -6,7 +6,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.viewModelScope
 import cl.awakelabs.ejercicio2.data.local.Item
 import cl.awakelabs.ejercicio2.data.local.ItemDB
-import cl.awakelabs.ejercicio2.data.local.Repository
+import cl.awakelabs.ejercicio2.Repository
 import kotlinx.coroutines.launch
 
 class ItemViewModel(application: Application) : AndroidViewModel(application) {
@@ -18,7 +18,8 @@ class ItemViewModel(application: Application) : AndroidViewModel(application) {
     fun obtainTask(): LiveData<List<Item>> {
         return repository.getItem()
     }
-    fun insertTask(item: Item) = viewModelScope.launch {
+    fun insertTask(name: String, price: Int, qty: Int) = viewModelScope.launch {
+        val item = Item(name, price, qty)
         repository.insertItem(item)
     }
 }

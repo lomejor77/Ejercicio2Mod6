@@ -14,7 +14,7 @@
         android:layout_marginTop="112dp"
         android:ems="10"
         android:hint="Ingrese Nombre"
-        android:inputType="number"
+        android:inputType="text"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -50,25 +50,38 @@
         android:id="@+id/textViewResult"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="16dp"
         android:text="TOTAL ACTUAL"
         android:textAlignment="center"
         android:textColor="#1A237E"
         android:textSize="50sp"
         app:layout_constraintEnd_toEndOf="@+id/editQty"
-        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintHorizontal_bias="0.51"
         app:layout_constraintStart_toStartOf="@+id/editQty"
         app:layout_constraintTop_toBottomOf="@+id/editQty" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btnAdd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="96dp"
         android:text="Button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/textViewResult"
         app:layout_constraintStart_toStartOf="@+id/textViewResult"
-        app:layout_constraintTop_toBottomOf="@+id/textViewResult"
-        app:layout_constraintVertical_bias="0.169" />
+        app:layout_constraintTop_toBottomOf="@+id/textTotal" />
+
+    <TextView
+        android:id="@+id/textTotal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:hint="Total"
+        android:textColor="#B71C1C"
+        android:textSize="34sp"
+        app:layout_constraintEnd_toEndOf="@+id/textViewResult"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="@+id/textViewResult"
+        app:layout_constraintTop_toBottomOf="@+id/textViewResult" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

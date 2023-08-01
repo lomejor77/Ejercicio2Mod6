@@ -5,18 +5,36 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import cl.awakelabs.ejercicio2.R
+import androidx.fragment.app.activityViewModels
 import cl.awakelabs.ejercicio2.databinding.FragmentAddBinding
 
 class AddFragment : Fragment() {
     lateinit var binding: FragmentAddBinding
+    private val itemViewModel: ItemViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        binding = FragmentAddBinding.inflate(layoutInflater, container, false)
+
+        initListener()
+
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_add, container, false)
+        return binding.root
+
+    }
+    private fun initListener() {
+        binding.btnAdd.setOnClickListener {
+            val nombre = binding.editName.text.toString()
+            val precio = binding.editPrice.text.toString().toInt()
+            val cantidad = binding.editQty.text.toString().toInt()
+
+            itemViewModel.insertTask(nombre,precio,cantidad)
+
+        }
+
+
     }
 
 
